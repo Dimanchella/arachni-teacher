@@ -4,7 +4,7 @@ package ru.mai.arachni.teacher;
  * Hello world!
  *
  */
-public class App 
+public class ArachniTeacherApplication
 {
     public static void main( String[] args )
     {
