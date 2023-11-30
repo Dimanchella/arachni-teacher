@@ -1,4 +1,4 @@
-package ru.mai.arachni.teacher.datasetcreator;
+package ru.mai.arachni.teacher.xmlloader;
 
 import jakarta.xml.bind.JAXBContext;
 import jakarta.xml.bind.JAXBException;
@@ -11,6 +11,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.StringReader;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Objects;
@@ -20,7 +21,9 @@ public class XMLReader {
     private List<File> getFilesList(String path) {
         File dir = new File(path);
         try {
-            return List.of(Objects.requireNonNull(dir.listFiles()));
+            return Arrays.stream(Objects.requireNonNull(dir.listFiles()))
+                    .sorted(Comparator.comparing(File::length).reversed())
+                    .toList();
         } catch (NullPointerException e) {
             return List.of();
         }
@@ -51,7 +54,7 @@ public class XMLReader {
         ArrayList<Object> data = new ArrayList<>();
         int limit = numFiles != -1 && files.size() > numFiles ? numFiles : files.size();
         double step = (double) files.size() / limit;
-        for (double i = 0; i < files.size(); i += step) {
+        for (double i = 0, j = 0; i < files.size() && j < limit; i += step, j++) {
             data.add(getObjectFromXML(files.get((int) i).toString(), clazz));
         }
         return data;

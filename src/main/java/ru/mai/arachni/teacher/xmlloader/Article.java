@@ -1,4 +1,4 @@
-package ru.mai.arachni.teacher.datasetcreator;
+package ru.mai.arachni.teacher.xmlloader;
 
 
 import jakarta.xml.bind.annotation.XmlAccessType;
