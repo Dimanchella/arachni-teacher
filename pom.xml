@@ -28,6 +28,12 @@
             <name>mvn-repo</name>
             <url>https://github.com/drxaos/mvn-repo/raw/master/</url>
         </repository>
+
+        <repository>
+            <id>drxaos</id>
+            <name>mvn-repo</name>
+            <url>https://github.com/noggit/mvn-repo/raw/master/</url>
+        </repository>
     </repositories>
 
     <dependencies>
@@ -69,6 +75,26 @@
             <groupId>company.evo</groupId>
             <artifactId>jmorphy2-lucene</artifactId>
             <version>0.2.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.noggit</groupId>
+            <artifactId>noggit</artifactId>
+            <version>0.8</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>1.3.2</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+            <version>1.16.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>32.1.3-jre</version>
         </dependency>
         <!--
         <dependency>

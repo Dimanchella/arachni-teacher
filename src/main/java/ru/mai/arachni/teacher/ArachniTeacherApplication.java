@@ -1,6 +1,9 @@
 package ru.mai.arachni.teacher;
 
+import company.evo.jmorphy2.FileLoader;
 import company.evo.jmorphy2.MorphAnalyzer;
+import company.evo.jmorphy2.ResourceFileLoader;
+import company.evo.jmorphy2.lucene.LuceneFileLoader;
 import lombok.SneakyThrows;
 import ru.mai.arachni.teacher.datasetcreator.Article;
 import ru.mai.arachni.teacher.datasetcreator.ArticlesStorage;
@@ -33,8 +36,14 @@ public class ArachniTeacherApplication {
     @SneakyThrows
     public static void main(String[] args) {
         MorphAnalyzer.Builder builder = new MorphAnalyzer.Builder();
-        
-        MorphAnalyzer morphy = builder.build();
-        System.out.println(morphy.normalForms("Сковородки"));
+
+        String lang = "ru";
+        String dictResourcePath = String.format("/company/evo/jmorphy2/%s/pymorphy2_dicts", lang);
+        MorphAnalyzer morphy = builder
+                .fileLoader(new ResourceFileLoader(dictResourcePath))
+                .charSubstitutes(null)
+        .build();
+//        morphy.normalForms("Коты");
+        System.out.println(morphy.normalForms("красивого"));
     }
 }
