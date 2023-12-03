@@ -16,7 +16,7 @@ import java.util.List;
 @Getter
 public class ArticlesStorage {
     private static final String DIR_SOURCE_PATH = "data\\universes\\";
-    private static final String FILE_RESULT_PATH = "data\\artifacts\\Articles_%d.arff";
+    private static final String FILE_RESULT_PATH = "data\\artifacts\\dataset_%d.arff";
 
     private record ArticleUniverse(
             int uniInd,
@@ -100,7 +100,10 @@ public class ArticlesStorage {
             double[] instVal = new double[]{
                     au.uniInd,
                     instances.attribute(1).addStringValue(
-                            textFormatter.formatText(au.text)
+                            textFormatter.lemmatizeWords(
+                                    //au.text
+                                    textFormatter.deletePunctuation(au.text)
+                            )
                     )
             };
             Instance inst = new DenseInstance(1, instVal);

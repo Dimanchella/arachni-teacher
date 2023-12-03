@@ -28,10 +28,12 @@ public class TextFormatter {
         return morphy.normalForms(word);
     }
 
-    public String formatText(String text) throws IOException {
-        String[] words = text
-                .replaceAll("[.,;:'\"()?!]", "")
-                .split("\\s");
+    public String deletePunctuation(String text) {
+        return text.replaceAll("[.,;:'\"()?!]", "");
+    }
+
+    public String lemmatizeWords(String text) throws IOException {
+        String[] words = text.split("\\s");
         for (int i = 0; i < words.length; i++) {
             words[i] = getNormalForm(words[i]).get(0);
         }
