@@ -11,7 +11,7 @@ import java.util.regex.Pattern;
 public class TextFormatter {
     private static final String LANG = "ru";
     private static final String PATH = String.format("/company/evo/jmorphy2/%s/pymorphy2_dicts", LANG);
-    private static final Pattern WORD_PAT = Pattern.compile(
+    private static final Pattern RU_WORD_PAT = Pattern.compile(
             "^\\W*?([а-яёА-ЯЁ]+)\\W*?$"
     );
 
@@ -40,7 +40,7 @@ public class TextFormatter {
     public String lemmatizeWords(String text) throws IOException {
         String[] words = text.split("\\s");
         for (int i = 0; i < words.length; i++) {
-            Matcher match = WORD_PAT.matcher(words[i]);
+            Matcher match = RU_WORD_PAT.matcher(words[i]);
             if (match.find()) {
                 words[i] = words[i].replaceAll(
                         match.group(1),
