@@ -17,12 +17,6 @@
     </properties>
 
     <repositories>
-        <!--
-        <repository>
-            <id>jitpack.io</id>
-            <url>https://jitpack.io</url>
-        </repository>
-        -->
         <repository>
             <id>drxaos</id>
             <name>mvn-repo</name>
@@ -95,58 +89,5 @@
             <artifactId>guava</artifactId>
             <version>32.1.3-jre</version>
         </dependency>
-
-        <!--
-        <dependency>
-            <groupId>com.github.jalexpr</groupId>
-            <artifactId>TAWT</artifactId>
-            <version>9332b0163e</version>
-        </dependency>
-        <dependency>
-            <groupId>com.github.jalexpr.tawt</groupId>
-            <artifactId>ambiguity-words-filter</artifactId>
-            <version>9332b0163e</version>
-        </dependency>
-        <dependency>
-            <groupId>com.github.jalexpr.tawt</groupId>
-            <artifactId>gama</artifactId>
-            <version>9332b0163e</version>
-        </dependency>
-        <dependency>
-            <groupId>com.github.jalexpr.tawt</groupId>
-            <artifactId>graphematic-parser</artifactId>
-            <version>9332b0163e</version>
-        </dependency>
-        <dependency>
-            <groupId>com.github.jalexpr.tawt</groupId>
-            <artifactId>jmorfsdk</artifactId>
-            <version>9332b0163e</version>
-        </dependency>
-        <dependency>
-            <groupId>com.github.jalexpr.tawt</groupId>
-            <artifactId>morphological-dictionary</artifactId>
-            <version>9332b0163e</version>
-        </dependency>
-        <dependency>
-            <groupId>com.github.jalexpr.tawt</groupId>
-            <artifactId>morphological-structures</artifactId>
-            <version>9332b0163e</version>
-        </dependency>
-        <dependency>
-            <groupId>com.github.jalexpr.tawt</groupId>
-            <artifactId>rules-for-compatibility</artifactId>
-            <version>9332b0163e</version>
-        </dependency>
-        <dependency>
-            <groupId>com.github.jalexpr.tawt</groupId>
-            <artifactId>syntactic-parser</artifactId>
-            <version>9332b0163e</version>
-        </dependency>
-        <dependency>
-            <groupId>com.github.jalexpr.tawt</groupId>
-            <artifactId>tawt-parent</artifactId>
-            <version>9332b0163e</version>
-        </dependency>
-        -->
     </dependencies>
 </project>
