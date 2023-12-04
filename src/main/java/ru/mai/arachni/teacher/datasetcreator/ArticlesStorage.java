@@ -11,6 +11,7 @@ import weka.core.Instance;
 import weka.core.Instances;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 @Getter
@@ -69,10 +70,13 @@ public class ArticlesStorage {
         articles = new ArrayList<>();
         articlesUniverses = new ArrayList<>();
         for (int i = 0; i < CLASSES.size(); i++) {
-            List<Article> loadedArticles = loadArticles(
-                    CLASSES.get(i),
-                    articlesNum
+            ArrayList<Article> loadedArticles = new ArrayList<>(
+                    loadArticles(
+                            CLASSES.get(i),
+                            articlesNum
+                    )
             );
+            Collections.shuffle(loadedArticles);
             articles.addAll(loadedArticles);
             final int index = i;
             articlesUniverses.addAll(
@@ -100,8 +104,8 @@ public class ArticlesStorage {
             double[] instVal = new double[]{
                     au.uniInd,
                     instances.attribute(1).addStringValue(
+                            //textFormatter.deletePunctuation(au.text)
                             textFormatter.lemmatizeWords(
-                                    //au.text
                                     textFormatter.deletePunctuation(au.text)
                             )
                     )
