@@ -1,0 +1,6 @@
+@relation articles_universes
+
+@attribute universe {Другое,'Elite Dangerous','Гарри Поттер',Метро,'Звёздные войны','The Elder Scrolls'}
+@attribute text string
+
+@data
